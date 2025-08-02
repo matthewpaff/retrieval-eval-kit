@@ -123,3 +123,4 @@
 {"description": "return zero aggregate metrics for an empty evaluation set", "expected": {"mean_recall_at_k": 0.0, "mean_reciprocal_rank_at_k": 0.0, "queries": []}, "id": "evaluation-0122", "input": {"k": 5, "queries": []}}
 {"description": "reject duplicate document IDs in a ranked result", "expected_error": true, "id": "evaluation-0123", "input": {"k": 2, "queries": [{"id": "q123", "ranked": ["a", "a"], "relevant": ["a"]}]}}
 {"description": "reject a zero retrieval evaluation cutoff", "expected_error": true, "id": "evaluation-0124", "input": {"k": 0, "queries": []}}
+{"description": "calculate recall and reciprocal rank at the supplied cutoff", "expected": {"mean_recall_at_k": 0.5, "mean_reciprocal_rank_at_k": 0.5, "queries": [{"id": "q125", "recall_at_k": 0.5, "reciprocal_rank_at_k": 0.5}]}, "id": "evaluation-0125", "input": {"k": 2, "queries": [{"id": "q125", "ranked": ["x", "a"], "relevant": ["a", "b"]}]}}
