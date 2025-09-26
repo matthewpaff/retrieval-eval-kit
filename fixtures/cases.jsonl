@@ -178,3 +178,4 @@
 {"description": "return zero aggregate metrics for an empty evaluation set", "expected": {"mean_recall_at_k": 0.0, "mean_reciprocal_rank_at_k": 0.0, "queries": []}, "id": "evaluation-0177", "input": {"k": 5, "queries": []}}
 {"description": "reject duplicate document IDs in a ranked result", "expected_error": true, "id": "evaluation-0178", "input": {"k": 2, "queries": [{"id": "q178", "ranked": ["a", "a"], "relevant": ["a"]}]}}
 {"description": "reject a zero retrieval evaluation cutoff", "expected_error": true, "id": "evaluation-0179", "input": {"k": 0, "queries": []}}
+{"description": "calculate recall and reciprocal rank at the supplied cutoff", "expected": {"mean_recall_at_k": 0.5, "mean_reciprocal_rank_at_k": 0.5, "queries": [{"id": "q180", "recall_at_k": 0.5, "reciprocal_rank_at_k": 0.5}]}, "id": "evaluation-0180", "input": {"k": 2, "queries": [{"id": "q180", "ranked": ["x", "a"], "relevant": ["a", "b"]}]}}
